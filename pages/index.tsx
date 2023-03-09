@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import {Fragment} from "react";
 import { Inter } from 'next/font/google'
 import {useSession, useSupabaseClient} from "@supabase/auth-helpers-react";
 import {Auth} from "@supabase/auth-ui-react";
 import {ThemeSupa} from "@supabase/auth-ui-shared";
+import Account from '@/components/Account';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,7 +29,7 @@ export default function Home() {
             appearance={{theme: ThemeSupa}}
           />
         ): (
-          <p>Account page will go here</p>
+          <Account session={session} />
         )}
       </main>
     </>
